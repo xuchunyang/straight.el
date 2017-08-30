@@ -1214,10 +1214,10 @@ specified in RECIPE instead. If that fails, signal a warning."
                  "git" "clone" "--depth" "1" "--origin"
                  straight-vc-git-primary-remote
                  "--no-checkout" url)
-              (straight--get-call
-               "git" "clone" "--origin"
-               straight-vc-git-primary-remote
-               "--no-checkout" url))
+              (error (straight--get-call
+                      "git" "clone" "--origin"
+                      straight-vc-git-primary-remote
+                      "--no-checkout" url)))
             (let ((straight--default-directory nil)
                   (default-directory repo-dir))
               (when commit
