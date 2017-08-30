@@ -1210,7 +1210,7 @@ specified in RECIPE instead. If that fails, signal a warning."
       (unwind-protect
           (progn
             (straight--get-call
-             "git" "clone" "--origin"
+             "git" "clone" "--depth" "1" "--origin"
              straight-vc-git-primary-remote
              "--no-checkout" url)
             (let ((straight--default-directory nil)
