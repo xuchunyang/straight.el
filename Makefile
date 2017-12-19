@@ -22,6 +22,10 @@ longlines:
 toc:
 	@elint/elint toc
 
+.PHONY: docs
+docs:
+	@sphinx-build docs docs/_build
+
 .PHONY: clean
 clean:
-	@rm -f *.elc
+	@rm -rf *.elc docs/_build
